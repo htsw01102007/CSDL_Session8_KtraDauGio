@@ -85,3 +85,9 @@ JOIN Category AS c ON b.category_id = c.category_id;
 SELECT * FROM Book
 ORDER BY price DESC
 LIMIT 2;
+
+SELECT c.category_name
+FROM Book AS b
+JOIN Category AS c ON b.category_id = c.category_id
+GROUP BY c.category_id
+HAVING COUNT(c.category_id) >=2;
