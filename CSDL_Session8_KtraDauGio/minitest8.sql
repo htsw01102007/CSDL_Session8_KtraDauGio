@@ -91,3 +91,9 @@ FROM Book AS b
 JOIN Category AS c ON b.category_id = c.category_id
 GROUP BY c.category_id
 HAVING COUNT(c.category_id) >=2;
+
+SELECT *
+FROM Book
+WHERE price > (
+	SELECT AVG(price) FROM Book
+);
